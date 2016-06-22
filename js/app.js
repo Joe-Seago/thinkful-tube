@@ -11,9 +11,9 @@ $(document).ready(function () {
         q: term
       }
     }).done(function (results) {
-      $.each(results.items, function (index) {
+      $.each(results.items, function (index, value) {
         $('.search-results').append('<li><a href="https://www.youtube.com/watch?v=' +
-          results.items[index].id.videoId + '"><img src=' + results.items[index].snippet.thumbnails.medium.url +
+          value.id.videoId + '"><img src=' + value.snippet.thumbnails.medium.url +
           '></a></li>');
       });
     });
